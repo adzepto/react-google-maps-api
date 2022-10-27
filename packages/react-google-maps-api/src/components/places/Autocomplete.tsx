@@ -154,12 +154,15 @@ export class Autocomplete extends PureComponent<
       unregisterEvents(this.registeredEvents)
       this.props.onUnmount && this.props.onUnmount(this.state.autocomplete)
     }
-    this.state.autocomplete = null
+    this.setState({ autocomplete: null })
   }
 
   render(): JSX.Element {
     return (
-      <div ref={this.containerElement} className={this.props.className}>
+      <div
+        ref={this.containerElement}
+        className={`${this.props.className} test`}
+      >
         {Children.only(this.props.children)}
       </div>
     )
