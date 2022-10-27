@@ -126,6 +126,7 @@ export class Autocomplete extends PureComponent<AutocompleteProps, AutocompleteS
   }
 
   componentWillUnmount(): void {
+    console.log('unmount')
     if (this.state.autocomplete !== null) {
       unregisterEvents(this.registeredEvents)
     }
